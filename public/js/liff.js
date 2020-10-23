@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           let rateFlag = false;
           let rate = getRQ('rqRate');
-          if (isNaN(rate)) {
+          if (!isNaN(Number(rate))) {
             if (Number.isInteger(Number(rate))) {
               rate = parseInt(rate, 10);
               if (rate > 8) {
