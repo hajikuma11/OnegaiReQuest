@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           let sendMessages ="";
           sendMessages = "【"+getRQ('rqType')+"】\n";
-          sendMessages = "『"+getRQ('rqName')+"』\n";
-          sendMessages = "[目標]\n"+getRQ('rqTarget')+"\n";
-          sendMessages = "[報酬]\n"+getRQ('rqReward')+"\n";
-          sendMessages = "[制限時間]\n"+getRQ('rqTimelimit')+"\n";
-          sendMessages = "[依頼主のコメント]\n"+getRQ('rqComment');
+          sendMessages += "『"+getRQ('rqName')+"』\n";
+          sendMessages += "[目標]\n"+getRQ('rqTarget')+"\n";
+          sendMessages += "[報酬]\n"+getRQ('rqReward')+"\n";
+          sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n";
+          sendMessages += "[依頼主のコメント]\n"+getRQ('rqComment');
           liff.sendMessages([{
             'type': 'text',
             'text': sendMessages
