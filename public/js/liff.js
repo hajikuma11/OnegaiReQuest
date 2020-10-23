@@ -43,9 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
           liff.sendMessages([{
             'type': 'text',
             'text': sendMessages
+          },{
+            'type': 'text',
+            'text': 'おねがいをコピーして使ってね！'
           }]).then(function() {
             liff.closeWindow();
-            document.getElementById('log').value += '[SUCCESS!]作成成功！\nこの画面を閉じて、おねがいをコピーして使おう！\n';
           }).catch(function(error) {
             document.getElementById('log').value += '[ERROR!]sendMessagesText()=' + error + '\n';
           });
