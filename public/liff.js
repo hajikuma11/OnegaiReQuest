@@ -8,9 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!liff.isInClient()) {
           document.getElementById('log').value += '[ERROR!]作成失敗！\n';
         } else {
+          let sendMessages ="";
+          sendMessages = "【"+getRQ('rqType')+"】\n";
+          sendMessages = "『"+getRQ('rqName')+"』\n";
+          sendMessages = "[目標]\n"+getRQ('rqTarget')+"\n";
+          sendMessages = "[報酬]\n"+getRQ('rqReward')+"\n";
+          sendMessages = "[制限時間]\n"+getRQ('rqTimelimit')+"\n";
+          sendMessages = "[依頼主のコメント]\n"+getRQ('rqComment');
           liff.sendMessages([{
             'type': 'text',
-            'text': document.getElementById('sendMessagesTextText').value
+            'text': sendMessages
           }]).then(function() {
             document.getElementById('log').value += '[SUCCESS!]作成成功！\nこの画面を閉じて、おねがいをコピーして使おう！\n';
           }).catch(function(error) {
@@ -23,3 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('log').value = 'init ng\n' + err;
     });
 });
+
+function getRQ(str) {
+  return document.getElementById(str).value;
+}
