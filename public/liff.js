@@ -14,10 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
           sendMessages += "[目標]\n"+getRQ('rqTarget')+"\n";
           sendMessages += "[報酬]\n"+getRQ('rqReward')+"\n";
           sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n";
-          sendMessages += "[依頼主のコメント]\n"+getRQ('rqComment');
+
+          let sendComment = "[依頼主のコメント]\n"+getRQ('rqComment');
           liff.sendMessages([{
             'type': 'text',
             'text': sendMessages
+          },
+          {
+            'type': 'text',
+            'text': sendComment
           }]).then(function() {
             document.getElementById('log').value += '[SUCCESS!]作成成功！\nこの画面を閉じて、おねがいをコピーして使おう！\n';
           }).catch(function(error) {
