@@ -11,6 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
           let sendMessages ="";
           sendMessages = "【"+getRQ('rqType')+"クエスト】\n";
           sendMessages += "『"+getRQ('rqName')+"』\n";
+
+          const blackStar = '★';
+          const whiteStar = '☆';
+          let rate = parseInt(getRQ('rqRate'), 10);
+
+          if (rate > 8) {
+            rate = 8;
+          } else if (rate < 0) {
+            rate = 0;
+          }
+
+          sendMessages += blackStar.repeat(rate);
+          sendMessages += whiteStar.repeat(8-rate);
+
+          sendMessages += "\n";
+
           sendMessages += "[目標]\n"+getRQ('rqTarget')+"\n";
           sendMessages += "[報酬]\n"+getRQ('rqReward')+"\n";
           sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n";
