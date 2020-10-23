@@ -6,15 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(() => {
       document.getElementById('go').addEventListener('click', () => {
         if (!liff.isInClient()) {
-          document.getElementById('log').value += 'sendMessagesText ng\n';
+          document.getElementById('log').value += '[ERROR!]作成失敗！\n';
         } else {
           liff.sendMessages([{
             'type': 'text',
             'text': document.getElementById('sendMessagesTextText').value
           }]).then(function() {
-            document.getElementById('log').value += 'sendMessagesText completed\n';
+            document.getElementById('log').value += '[SUCCESS!]作成成功！\nこの画面を閉じて、おねがいをコピーして使おう！\n';
           }).catch(function(error) {
-            document.getElementById('log').value += 'sendMessagesText()=' + error + '\n';
+            document.getElementById('log').value += '[ERROR!]sendMessagesText()=' + error + '\n';
           });
         }
       });

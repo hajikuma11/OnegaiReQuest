@@ -9,8 +9,13 @@
   </head>
   <body>
     <div>
-      <h3>メッセージを送信する</h3>
-      <div>text<input type="text" id="sendMessagesTextText" placeholder="text" value=""/></div>
+      <h3>おねがいを作成する</h3>
+      <div>クエスト：<input type="text" id="rqType" placeholder="採取 討伐 緊急 常設 など" value=""/>クエスト</div>
+      <div>クエスト名：<input type="text" id="rqName" placeholder="○○を△△せよ など" value=""/></div>
+      <div>目標：<input type="text" id="rqTarget" placeholder="○○の納品 △△の討伐 など" value=""/></div>
+      <div>報酬：<input type="text" id="rqReward" placeholder="円はz(ゼニー)にするとそれっぽく" value=""/></div>
+      <div>制限時間：<input type="text" id="rqTimelimit" placeholder="６０分 堪忍袋の緒が切れるまで　など" value=""/></div>
+      <div>依頼主のコメント：<input type="text" id="rqComment" placeholder="話し口調や語尾に のじゃ ニャー でそれっぽく" value=""/></div>
       <input type="button" id="go" value="実行"/>
       <textarea id="log" style="width:96%;height:100px;"></textarea>
     </div>
