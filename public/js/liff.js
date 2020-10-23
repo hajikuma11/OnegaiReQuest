@@ -12,20 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
           sendMessages = "【"+getRQ('rqType')+"クエスト】\n";
           sendMessages += "『"+getRQ('rqName')+"』\n";
 
-          const blackStar = '★';
-          const whiteStar = '☆';
-          let rate = parseInt(getRQ('rqRate'), 10);
-
-          if (rate > 8) {
-            rate = 8;
-          } else if (rate < 0) {
-            rate = 0;
+          let rate = getRQ('rqRate');
+          if (Number.isInteger(rate)) {
+            rate = parseInt(rate, 10);
+            if (rate > 8) {
+              rate = 8;
+            } else if (rate < 0) {
+              rate = 0;
+            }
+            const blackStar = '★';
+            const whiteStar = '☆';
+            sendMessages += blackStar.repeat(rate);
+            sendMessages += whiteStar.repeat(8-rate);
+            sendMessages += "\n";
+          } else {
+            sendMessages += "[難易度]\n"+rate+"\n";
           }
-
-          sendMessages += blackStar.repeat(rate);
-          sendMessages += whiteStar.repeat(8-rate);
-
-          sendMessages += "\n";
 
           sendMessages += "[目標]\n"+getRQ('rqTarget')+"\n";
           sendMessages += "[報酬]\n"+getRQ('rqReward')+"\n";
