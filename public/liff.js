@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById('log').value += '[ERROR!]作成失敗！\n';
         } else {
           let sendMessages ="";
-          sendMessages = "【"+getRQ('rqType')+"】\n";
+          sendMessages = "【"+getRQ('rqType')+"クエスト】\n";
           sendMessages += "『"+getRQ('rqName')+"』\n";
           sendMessages += "[目標]\n"+getRQ('rqTarget')+"\n";
           sendMessages += "[報酬]\n"+getRQ('rqReward')+"\n";
