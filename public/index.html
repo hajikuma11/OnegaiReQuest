@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>おねがい作成</title>
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-    <script src="liff.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="/js/jquery.raty.js"></script>
+    <script src="/js/liff.js"></script>
+    <script>
+      $(function(){
+        $('#rqRate').raty();
+      });
+    </script>
   </head>
   <body>
     <div>
       <h3>おねがいを作成する</h3>
       <div>クエスト：<input type="text" id="rqType" placeholder="採取 討伐 緊急 常設 など" value=""/>クエスト</div>
       <div>クエスト名：<input type="text" id="rqName" placeholder="○○を△△せよ など" value=""/></div>
+      <div id="rqRate"></div>
       <div>目標：<input type="text" id="rqTarget" placeholder="○○の納品 △△の討伐 など" value=""/></div>
       <div>報酬：<input type="text" id="rqReward" placeholder="円はz(ゼニー)にするとそれっぽく" value=""/></div>
       <div>制限時間：<input type="text" id="rqTimelimit" placeholder="６０分 堪忍袋の緒が切れるまで　など" value=""/></div>
