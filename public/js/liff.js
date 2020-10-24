@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
           sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n------------\n";
           sendMessages += "[依頼主のコメント]\n"+getRQ('rqComment');
 
-          liff.shareTargetPicker([{
+          liff.sendMessages([{
             'type': 'text',
             'text': sendMessages
           },{
