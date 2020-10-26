@@ -47,30 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let sendMessages ="";
           sendMessages = "【"+getRQ('rqType')+"クエスト】\n";
           sendMessages += "『"+getRQ('rqName')+"』\n";
-
-          let rateFlag = false;
-          let rate = getRQ('rqRate');
-          if (!isNaN(Number(rate))) {
-            if (Number.isInteger(Number(rate))) {
-              rate = parseInt(rate, 10);
-              if (rate > 8) {
-                rate = 8;
-              } else if (rate < 0) {
-                rate = 0;
-              }
-              const blackStar = '★';
-              const whiteStar = '☆';
-              sendMessages += blackStar.repeat(rate);
-              sendMessages += whiteStar.repeat(8-rate);
-              sendMessages += "\n";
-
-              rateFlag = true;
-            }
-          }
-          if (!rateFlag) {
-            sendMessages += "[難易度]\n"+rate+"\n";
-          }
-
+          sendMessages += "[難易度]\n"+getRQ('rqRate')+"\n";
           sendMessages += "[目標]\n"+getRQ('rqTarget')+"\n";
           sendMessages += "[報酬]\n"+getRQ('rqReward')+"\n";
           sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n------------\n";
