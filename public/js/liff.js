@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
               sendMessages += blackStar.repeat(rate);
               sendMessages += whiteStar.repeat(8-rate);
               sendMessages += "\n";
-
               rateFlag = true;
             }
           }
@@ -40,12 +39,24 @@ document.addEventListener("DOMContentLoaded", () => {
           sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n------------\n";
           sendMessages += "[依頼主のコメント]\n"+getRQ('rqComment');
 
+          let debugMessages = "";
+
+          debugMessages += "rateFlag=";
+          if (rateFlag) {
+            debugMessages += "true\n";
+          } else {
+            debugMessages += "false\n";
+          }
+
           liff.sendMessages([{
             'type': 'text',
             'text': sendMessages
           },{
             'type': 'text',
             'text': 'おねがいをコピーして使ってね！'
+          },{
+            'type': 'text',
+            'text': debugMessages
           }]).then(function() {
             liff.closeWindow();
           }).catch(function(error) {
