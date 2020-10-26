@@ -13,7 +13,18 @@
       <h3>おねがいを作成する</h3>
       <div><input type="text" id="rqType" placeholder="クエスト種別" value=""/>クエスト</div>
       <div><input type="text" id="rqName" placeholder="クエスト名" value=""/></div>
-      <div><input type="number" id="rqRate" placeholder="難易度" value=""/></div>
+      <select name="rate" id="rqRare">
+        <option value="">難易度を選択</option>
+        <option value="☆☆☆☆☆☆☆☆">☆☆☆☆☆☆☆☆</option>
+        <option value="★☆☆☆☆☆☆☆">★☆☆☆☆☆☆☆</option>
+        <option value="★★☆☆☆☆☆☆">★★☆☆☆☆☆☆</option>
+        <option value="★★★☆☆☆☆☆">★★★☆☆☆☆☆</option>
+        <option value="★★★★☆☆☆☆">★★★★☆☆☆☆</option>
+        <option value="★★★★★☆☆☆">★★★★★☆☆☆</option>
+        <option value="★★★★★★☆☆">★★★★★★☆☆</option>
+        <option value="★★★★★★★☆">★★★★★★★☆</option>
+        <option value="★★★★★★★★">★★★★★★★★</option>
+      </select>
       <div><input type="text" id="rqTarget" placeholder="目標" value=""/></div>
       <div><input type="text" id="rqReward" placeholder="報酬" value=""/></div>
       <div><input type="text" id="rqTimelimit" placeholder="制限時間" value=""/></div>
