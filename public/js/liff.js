@@ -8,15 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!liff.isInClient()) {
           document.getElementById('log').value += '[ERROR!]作成失敗！\n';
         } else {
-          let sendMessages ="";
-          sendMessages = "【"+getRQ('rqType')+"クエスト】\n";
-          sendMessages += "『"+getRQ('rqName')+"』\n";
-          sendMessages += "[難易度]\n"+getRQ('rqRate')+"\n";
-          sendMessages += "[目標]\n"+getRQ('rqTarget')+"\n";
-          sendMessages += "[報酬]\n"+getRQ('rqReward')+"\n";
-          sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n------------\n";
-          sendMessages += "[依頼主のコメント]\n"+getRQ('rqComment');
-
+          sendMessages = createMessage();
           liff.sendMessages([{
             'type': 'text',
             'text': sendMessages
@@ -35,15 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!liff.isInClient()) {
           document.getElementById('log').value += '[ERROR!]作成失敗！\n';
         } else {
-          let sendMessages ="";
-          sendMessages = "【"+getRQ('rqType')+"クエスト】\n";
-          sendMessages += "『"+getRQ('rqName')+"』\n";
-          sendMessages += "[難易度]\n"+getRQ('rqRate')+"\n";
-          sendMessages += "[目標]\n"+getRQ('rqTarget')+"\n";
-          sendMessages += "[報酬]\n"+getRQ('rqReward')+"\n";
-          sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n------------\n";
-          sendMessages += "[依頼主のコメント]\n"+getRQ('rqComment');
-
+          sendMessages = createMessage();
           liff.shareTargetPicker([{
             'type': 'text',
             'text': sendMessages
@@ -62,4 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function getRQ(str) {
   return document.getElementById(str).value;
+}
+
+function createMessage() {
+  let msg = "【"+getRQ('rqType')+"クエスト】\n";
+  msg += "『"+getRQ('rqName')+"』\n";
+  msg += "[難易度]\n"+getRQ('rqRate')+"\n";
+  msg += "[目標]\n"+getRQ('rqTarget')+"\n";
+  msg += "[報酬]\n"+getRQ('rqReward')+"\n";
+  msg += "[制限時間]\n"+getRQ('rqTimelimit')+"\n------------\n";
+  msg += "[依頼主のコメント]\n"+getRQ('rqComment');
+
+  return msg;
 }
