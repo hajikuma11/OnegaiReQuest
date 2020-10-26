@@ -7,13 +7,14 @@
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/liff.js"></script>
+    <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
-    <div>
-      <h3>おねがいを作成する</h3>
-      <div><input type="text" id="rqType" placeholder="クエスト種別" value=""/>クエスト</div>
-      <div><input type="text" id="rqName" placeholder="クエスト名" value=""/></div>
-      <select name="rate" id="rqRare" required>
+    <h3>おねがいを作成する</h3>
+    <div id="forms">
+      <div><input type="text" id="rqType" class="form" placeholder="クエスト種別" value=""/>クエスト</div>
+      <div><input type="text" id="rqName" class="form" placeholder="クエスト名" value=""/></div>
+      <select name="rate" id="rqRare" class="form" required>
         <option value="">難易度を選択</option>
         <option value="☆☆☆☆☆☆☆☆">☆☆☆☆☆☆☆☆</option>
         <option value="★☆☆☆☆☆☆☆">★☆☆☆☆☆☆☆</option>
@@ -25,43 +26,18 @@
         <option value="★★★★★★★☆">★★★★★★★☆</option>
         <option value="★★★★★★★★">★★★★★★★★</option>
       </select>
-      <div><input type="text" id="rqTarget" placeholder="目標" value=""/></div>
-      <div><input type="text" id="rqReward" placeholder="報酬" value=""/></div>
-      <div><input type="text" id="rqTimelimit" placeholder="制限時間" value=""/></div>
-      <div><input type="text" id="rqComment" placeholder="依頼主のコメント" value=""/></div>
-      <br>
-      <input type="button" id="talk" value="トークにお願いを作成"/>
-      <br><br>
-      <input type="button" id="share" value="お願いを作成してシェアする"/>
-      <br><br>
-      <div>ログ</div>
-      <textarea id="log" style="width:96%;height:20px;"></textarea>
+      <div><input type="text" id="rqTarget" class="form" placeholder="目標" value=""/></div>
+      <div><input type="text" id="rqReward" class="form" placeholder="報酬" value=""/></div>
+      <div><input type="text" id="rqTimelimit" class="form" placeholder="制限時間" value=""/></div>
+      <div><input type="text" id="rqComment" class="form" placeholder="依頼主のコメント" value=""/></div>
     </div>
-    <h2>使用例</h2>
-    <h4>学校から帰るときにたまごを買ってきてほしい時</h4>
-    <div>クエスト：<input type="text" value="緊急"/>クエスト</div>
-    <div>クエスト名：<input type="text" value="料理に使う卵を確保せよ！"/></div>
-    <div>難易度：<input type="text" value="2"/></div>
-    <div>目標：<input type="text" value="６個入りの卵パック x 1"/></div>
-    <div>報酬：<input type="text" value="200z"/></div>
-    <div>制限時間：<input type="text" value="ご飯を作り始めるまで"/></div>
-    <div>依頼主のコメント：<input type="text" value="冷蔵庫を開けたら卵がない！"/></div>
-    <p><b>作成ボタン</b>を押すと次のような文章が<br>このトークに送信されます</p>
-    <textarea style="width:80%;height:200px;">
-
-      【緊急クエスト】
-      『料理に使う卵を確保せよ！』
-      ★★☆☆☆☆☆☆
-      [目標]
-      ６個入りの卵パック x 1
-      [報酬]
-      200z
-      [制限時間]
-      ご飯を作り始めるまで
-      ------------
-      [依頼主のコメント]
-      冷蔵庫を開けたら卵がない！
-    
-    </textarea>
+    <div id="btns">
+      <input type="button" id="talk" class="btn" value="トークにお願いを作成"/>
+      <input type="button" id="share" class="btn" value="お願いを作成してシェアする"/>
+    </div>
+    <div id="logs">
+      <p>ログ</p>
+      <textarea id="log" style="width:96%;height:40px;"></textarea>
+    </div>
   </body>
 </html>

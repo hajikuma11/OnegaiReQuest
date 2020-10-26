@@ -1,0 +1,25 @@
+body {
+  font-size: 16pt;
+}
+
+#forms {
+  background-color: rgb(255, 225, 185);
+}
+
+.form {
+  height: 48px;
+}
+
+#btns {
+  padding: 16px;
+}
+
+.btn {
+  font-weight: bold;
+  height: 48px;
+}
+
+#logs {
+  background-color: rgb(216, 216, 216);
+  
+}
