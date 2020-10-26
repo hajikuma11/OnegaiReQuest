@@ -17,15 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
           sendMessages += "[制限時間]\n"+getRQ('rqTimelimit')+"\n------------\n";
           sendMessages += "[依頼主のコメント]\n"+getRQ('rqComment');
 
-          let debugMessages = "[debug]\n";
-
-          debugMessages += "rateFlag=";
-          if (rateFlag) {
-            debugMessages += "true\n";
-          } else {
-            debugMessages += "false\n";
-          }
-
           liff.sendMessages([{
             'type': 'text',
             'text': sendMessages
